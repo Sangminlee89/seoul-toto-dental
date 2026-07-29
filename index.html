@@ -180,6 +180,47 @@
       background:var(--gold);color:#fff;font-size:13px;font-weight:700;letter-spacing:.03em
     }
 
+    /* ── 생애주기 타임라인 ── */
+    #lifecycle{background:linear-gradient(160deg,#fdf6ee 0%,#fff9f3 100%)}
+    .life-intro{font-size:17px;color:var(--ink-lt);line-height:1.9;max-width:600px;margin-bottom:52px;border-left:4px solid var(--gold);padding-left:20px}
+    .life-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+    .life-timeline::before{
+      content:"";position:absolute;top:48px;left:12.5%;right:12.5%;height:2px;
+      background:linear-gradient(90deg,var(--gold),var(--accent),var(--gold));
+      z-index:0;
+    }
+    .life-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 12px;position:relative;z-index:1}
+    .life-dot{
+      width:48px;height:48px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      margin-bottom:20px;position:relative;
+      box-shadow:0 4px 18px rgba(0,0,0,.12);
+    }
+    .life-dot-1{background:linear-gradient(135deg,#ffd6a5,#ffb347)}
+    .life-dot-2{background:linear-gradient(135deg,#a8e6cf,#3ec87a)}
+    .life-dot-3{background:linear-gradient(135deg,#a8d4f5,#2970d6)}
+    .life-dot-4{background:linear-gradient(135deg,#d4a8f5,#9a2260)}
+    .life-dot svg{width:22px;height:22px}
+    .life-age{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:6px}
+    .life-title{font-size:15px;font-weight:800;color:var(--ink);margin-bottom:8px}
+    .life-desc{font-size:12px;color:var(--ink-lt);line-height:1.7}
+    .life-quote{
+      margin-top:52px;background:var(--ink);border-radius:16px;padding:36px 44px;
+      display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;
+    }
+    .lq-item{border-left:2px solid var(--gold);padding-left:18px}
+    .lq-item p{font-size:14px;color:rgba(255,255,255,.78);line-height:1.8;font-style:italic}
+    .lq-item small{font-size:11px;color:var(--gold);margin-top:10px;display:block;letter-spacing:.5px}
+    @media(max-width:900px){
+      .life-timeline{grid-template-columns:1fr 1fr;gap:32px}
+      .life-timeline::before{display:none}
+      .life-quote{grid-template-columns:1fr}
+    }
+    @media(max-width:540px){
+      .life-timeline{grid-template-columns:1fr}
+      .life-quote{padding:24px 22px}
+    }
+
     /* ── 예방관리 클리닉 ── */
     #prevention{background:var(--white)}
     .warn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px}
@@ -396,8 +437,8 @@
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
       Seoul Toto Dental Clinic
     </div>
-    <h1 class="hero-h1">치아 건강,<br><em>평생 함께</em> 합니다</h1>
-    <p class="hero-sub">영유아부터 성인까지 — 서울토토치과가<br>평생 건강한 치아를 함께 지켜드립니다.</p>
+    <h1 class="hero-h1">우리 아이가<br>태어나던 날,<br><em>기억하시나요?</em></h1>
+    <p class="hero-sub">영유아부터 성인까지 — 서울토토치과가<br>평생 건강한 치아 성장을 함께 설계합니다.</p>
     <div class="hero-ctas">
       <a class="btn-pri" href="#direction">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -531,6 +572,82 @@
         <p class="about-txt">치과 치료는 무섭고 불편하다는 편견을 바꾸고 싶습니다. 서울토토치과는 정확한 진단, 충분한 설명, 그리고 편안한 치료 환경으로 매번 오고 싶은 치과를 만들어 가겠습니다.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- 생애주기 타임라인 -->
+<section id="lifecycle" class="sec">
+  <div class="sec-inner">
+    <p class="sec-kicker">Life Cycle Care</p>
+    <h2 class="sec-h2">영유아부터 성인까지<br>평생 함께합니다</h2>
+    <p class="life-intro">대부분의 치과는 문제가 생긴 뒤 치료를 시작합니다.<br>서울토토치과는 <strong>문제가 생기기 전의 변화를 먼저 확인</strong>합니다.</p>
+
+    <div class="life-timeline">
+
+      <div class="life-step">
+        <div class="life-dot life-dot-1" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
+          </svg>
+        </div>
+        <p class="life-age">영유아기</p>
+        <p class="life-title">0 — 5세</p>
+        <p class="life-desc">작은 습관이<br>얼굴 성장의<br>시작이 됩니다</p>
+      </div>
+
+      <div class="life-step">
+        <div class="life-dot life-dot-2" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <p class="life-age">소아기</p>
+        <p class="life-title">6 — 12세</p>
+        <p class="life-desc">보이지 않던 차이가<br>형태로 드러나는<br>시기</p>
+      </div>
+
+      <div class="life-step">
+        <div class="life-dot life-dot-3" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            <polyline points="16 11 18 13 22 9"/>
+          </svg>
+        </div>
+        <p class="life-age">청소년기</p>
+        <p class="life-title">13 — 18세</p>
+        <p class="life-desc">성장의 결과가<br>얼굴로 완성되는<br>시간</p>
+      </div>
+
+      <div class="life-step">
+        <div class="life-dot life-dot-4" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+        </div>
+        <p class="life-age">성인기</p>
+        <p class="life-title">19세 이상</p>
+        <p class="life-desc">평생 지속되는<br>예방과 유지관리의<br>파트너</p>
+      </div>
+
+    </div>
+
+    <div class="life-quote">
+      <div class="lq-item">
+        <p>"소아치과와 교정이 분리되면 아이의 성장 흐름이 끊어질 수 있습니다."</p>
+        <small>— 서울토토치과 진료 철학</small>
+      </div>
+      <div class="lq-item">
+        <p>"아이의 성장은 기억이 아니라 기록으로 관리되어야 합니다."</p>
+        <small>— 서울토토치과 진료 철학</small>
+      </div>
+      <div class="lq-item">
+        <p>"처음 오는 날부터 어른이 되어서도 — 같은 선생님, 같은 치과."</p>
+        <small>— 서울토토치과 진료 철학</small>
+      </div>
+    </div>
+
   </div>
 </section>
 
